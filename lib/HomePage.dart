@@ -91,10 +91,13 @@ class _HomeState extends State<Home> {
                               Container(
                                 child: ClipRRect(
                                     borderRadius: BorderRadius.only(topRight: Radius.circular(16),topLeft: Radius.circular(16) ),
-                                    child: Image.network(
-                                      images[index],
-                                      fit: BoxFit.fill,
-                                      height: SizeConfig.safeBlockVertical * 40,
+                                    child: Hero(
+                                      tag: "hexa"+index.toString(),
+                                      child: Image.network(
+                                        images[index],
+                                        fit: BoxFit.fill,
+                                        height: SizeConfig.safeBlockVertical * 40,
+                                      ),
                                     )),
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.only(

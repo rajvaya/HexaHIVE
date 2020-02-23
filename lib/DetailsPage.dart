@@ -39,9 +39,12 @@ class _DetailsState extends State<Details> {
               color: Colors.white,
               height: SizeConfig.safeBlockVertical * 40,
               width: SizeConfig.safeBlockHorizontal * 100,
-              child: Image.network(
-                images[widget.cardindex],
-                fit: BoxFit.scaleDown,
+              child: Hero(
+                tag: "hexa"+widget.cardindex.toString(),
+                child: Image.network(
+                  images[widget.cardindex],
+                  fit: BoxFit.scaleDown,
+                ),
               ),
             ),
             Container(
@@ -89,8 +92,7 @@ class _DetailsState extends State<Details> {
                                         valueColor: new AlwaysStoppedAnimation<Color>(
                                           Colors.indigo[300],
                                         ),
-                                      ),
-                                    );
+                                      ),);
                                   },
                               )),
                           decoration: BoxDecoration(
